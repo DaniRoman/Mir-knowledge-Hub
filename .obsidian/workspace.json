@@ -11,8 +11,12 @@
             "id": "1ebb1e1dbf0f0782",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "M02/README.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "M02/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "M02/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "M02/README.md"
+              }
             }
           }
         ]
@@ -138,7 +146,7 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "796576777d3f9f4e",
+  "active": "1ebb1e1dbf0f0782",
   "lastOpenFiles": [
     "M2S/Privilegios&Roles/ATTACHMENTS/82fbc5c0-e934-4607-8877-e003ce3e6306.jpg",
     "M2S/Privilegios&Roles/Verificación de permisos para los roles.md",
