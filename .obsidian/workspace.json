@@ -11,9 +11,11 @@
             "id": "1ebb1e1dbf0f0782",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.14.png"
+                "file": "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.14.png",
+                "file": "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.14.png",
+                "file": "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.14.png"
+                "file": "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md"
               }
             }
           }
@@ -146,13 +148,19 @@
   },
   "active": "1ebb1e1dbf0f0782",
   "lastOpenFiles": [
-    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.34.31.png",
-    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.29.33.png",
-    "M02/ATTACHMENTS/Captura de pantalla 2024-03-13 a las 14.01.30.png",
-    "M02/ATTACHMENTS/Captura de pantalla 2024-03-13 a las 13.38.15.png",
-    "M02/ATTACHMENTS/Captura de pantalla 2024-02-21 a las 10.11.45.png",
-    "M02/README.md",
     "M2S/Privilegios&Roles/ATTACHMENTS/82fbc5c0-e934-4607-8877-e003ce3e6306.jpg",
+    "M2S/Privilegios&Roles/Archivo WAL.md",
+    "M2S/Monitoreo/Monitoreo con Prometheus Y Grafana.md",
+    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 13.11.06.png",
+    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.45.53.png",
+    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.43.55.png",
+    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.43.29.png",
+    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.39.38.png",
+    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.38.44.png",
+    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.50.png",
+    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.14 1.png",
+    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.14.png",
+    "M02/README.md",
     "M2S/Privilegios&Roles/Verificación de permisos para los roles.md",
     "M2S/Privilegios&Roles/Recurso y comandos para gestionar Docker y Postgres.md",
     "M2S/Privilegios&Roles/Página Principal Temario M10.md",
@@ -161,20 +169,13 @@
     "M2S/Privilegios&Roles/Practica soporte a copias de seguridad Res.md",
     "M2S/Privilegios&Roles/Practica Res.md",
     "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
-    "M2S/Privilegios&Roles/Archivo WAL.md",
     "M2S/Privilegios&Roles/ATTACHMENTS",
     "M2S/Privilegios&Roles",
-    "M2S/Replicacion/ATTACHMENTS/Captura de pantalla 2024-03-27 a las 14.40.49.png",
-    "M2S/Replicacion/ATTACHMENTS/Captura de pantalla 2024-03-27 a las 12.26.45.png",
     "M2S/Replicacion/Replicación metodo Streaming.md",
     "M2S/Replicacion/Replicacion PostgreSQL.md",
     "M2S/Replicacion/ATTACHMENTS.zip",
     "M2S/Replicacion/ATTACHMENTS",
     "M2S/Replicacion",
-    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 13.11.06.png",
-    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.45.53.png",
-    "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.43.55.png",
-    "M2S/Monitoreo/Monitoreo con Prometheus Y Grafana.md",
     "M2S/Monitoreo/ATTACHMENTS.zip",
     "M2S/Monitoreo/ATTACHMENTS",
     "M2S/Monitoreo",
