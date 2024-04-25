@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
+                "file": "M02/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
+                "file": "M02/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
+                "file": "M02/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md"
+                "file": "M02/README.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "1ebb1e1dbf0f0782",
   "lastOpenFiles": [
+    "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
     "M2S/Privilegios&Roles/ATTACHMENTS/82fbc5c0-e934-4607-8877-e003ce3e6306.jpg",
     "M2S/Privilegios&Roles/Archivo WAL.md",
     "M2S/Monitoreo/Monitoreo con Prometheus Y Grafana.md",
@@ -168,7 +169,6 @@
     "M2S/Privilegios&Roles/Practica soporte a copias de seguridad.md",
     "M2S/Privilegios&Roles/Practica soporte a copias de seguridad Res.md",
     "M2S/Privilegios&Roles/Practica Res.md",
-    "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
     "M2S/Privilegios&Roles/ATTACHMENTS",
     "M2S/Privilegios&Roles",
     "M2S/Replicacion/Replicación metodo Streaming.md",
