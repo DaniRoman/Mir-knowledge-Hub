@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "M02/README.md",
+                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M02/README.md",
+                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M02/README.md",
+                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "M02/README.md"
+                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "1ebb1e1dbf0f0782",
   "lastOpenFiles": [
+    "M02/README.md",
     "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
     "M2S/Privilegios&Roles/ATTACHMENTS/82fbc5c0-e934-4607-8877-e003ce3e6306.jpg",
     "M2S/Privilegios&Roles/Archivo WAL.md",
@@ -161,7 +162,6 @@
     "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.50.png",
     "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.14 1.png",
     "M2S/Monitoreo/ATTACHMENTS/Captura de pantalla 2024-04-18 a las 11.35.14.png",
-    "M02/README.md",
     "M2S/Privilegios&Roles/Verificación de permisos para los roles.md",
     "M2S/Privilegios&Roles/Recurso y comandos para gestionar Docker y Postgres.md",
     "M2S/Privilegios&Roles/Página Principal Temario M10.md",
