@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
+                "file": "M02/Guia Montar DB con Docker y cargar dvdRental Sample DB.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
+                "file": "M02/Guia Montar DB con Docker y cargar dvdRental Sample DB.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
+                "file": "M02/Guia Montar DB con Docker y cargar dvdRental Sample DB.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md"
+                "file": "M02/Guia Montar DB con Docker y cargar dvdRental Sample DB.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "1ebb1e1dbf0f0782",
   "lastOpenFiles": [
+    "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
     "M02/README.md",
     "M2S/Privilegios&Roles/Ejemplo de caso de uso para definir roles.md",
     "M2S/Privilegios&Roles/ATTACHMENTS/82fbc5c0-e934-4607-8877-e003ce3e6306.jpg",
