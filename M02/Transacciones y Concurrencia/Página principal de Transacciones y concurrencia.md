@@ -1,6 +1,10 @@
+
+>[!important] Recurso externo
+>[Transaction Isolation in Postgres, explained](https://www.thenile.dev/blog/transaction-isolation-postgres)
+>[LOCKS a comprensive Guide](https://hevodata.com/learn/postgresql-locks/)
 ## Concepto 
 
-Las transacciones son una forma de agrupar y aislar múltiples sentencias para procesarlas como una única operación. 
+Las **transacciones** son una forma de agrupar y aislar múltiples sentencias para procesarlas como una única operación. 
 
 En lugar de ejecutar cada comando individualmente a medida que se envía al servidor, en una transacción los comandos se agrupan y se ejecutan en un contexto distinto al de otras peticiones.
 
@@ -10,45 +14,21 @@ Estas características ayudan a las bases de datos a lograr el **cumplimiento de
 <span style="color:#0070c0">Atomicidad</span> (las acciones en una transacción se consignan todas o se revierten todas) 
 <span style="color:#0070c0">Aislamiento</span> (fuera de la transacción, nada cambia hasta la consignación, mientras que dentro, las sentencias tienen consecuencias). Todo ello ayuda a la base de datos a mantener la <span style="color:#0070c0">Coherencia</span> (garantizando que no se produzcan transformaciones parciales de los datos). Además, los cambios en las transacciones no se devuelven como realizados con éxito hasta que se consignan al almacenamiento no volátil, lo que proporciona <span style="color:#0070c0">Durabilidad</span>.
 
-Para lograr estos objetivos, las transacciones emplean una serie de estrategias diferentes. 
+Mientras que la Atomicidad proporciona importantes garantías para una única transacción, las garantías de Aislamiento entran en juego cuando hay múltiples transacciones ejecutándose simultáneamente.
 
-PostgreSQL utiliza un sistema llamado Multiversion Concurrency Control (MVCC),
-Permite a la base de datos realizar estas acciones sin bloqueos innecesarios utilizando instantáneas de datos. 
+ Un usuario ejecuta una transacción que mueve dinero entre cuentas, y mientras esa transacción se está procesando, pero antes de que se confirme, otra persona ejecuta un `SELECT` de esas cuentas
+ ¿Qué devolverá esta consulta? ¿Importa si se ejecutó antes o después de la primera actualización? Esto es lo que abordan los niveles de aislamiento:
 
-En conjunto, estos sistemas constituyen uno de los pilares fundamentales de las bases de datos relacionales modernas, ya que les permiten procesar datos complejos de forma segura y resistente a los bloqueos.
-## Tipos de fallos de consistencia
+El nivel de aislamiento ideal  se denomina "Serializable" porque garantiza que existe un orden serial de las transacciones con los mismos resultados.
 
-Una de las razones por las se utilizan transacciones es para obtener ciertas garantías sobre la consistencia de sus datos y el entorno en el que se procesan.
-La consistencia puede romperse de muchas maneras diferentes, lo que afecta a la forma en que las bases de datos intentan evitarlas.
+es un gran ideal, pero no algo que pueda ser implementado sin dejar de ofrecer un rendimiento adecuado.
 
-Hay cuatro formas principales en las que la inconsistencia puede surgir dependiendo de la implementación de la transacción. 
+Dado que el ideal no era práctico, se implementan múltiples niveles de aislamiento y explicar qué puede ocurrir en cada uno de ellos. 
 
-### Dirty reads ( Lecturas sucias )
+Existe una lista de resultados extraños que se pueden encontrar si no se tiene serializabilidad denominadas "anomalías". Después definieron los niveles de aislamiento en términos de "qué anomalías pueden ocurrir en cada nivel":
 
-Se producen cuando las sentencias de una transacción pueden leer datos escritos por otras transacciones en curso. 
-Esto significa que aunque las sentencias de una transacción no hayan sido confirmadas todavía, pueden ser leídas y por tanto influir en otras transacciones.
+ El control de concurrencia multiversión, MVCC, se generalizó y se convirtió en la implementación más común del aislamiento de transacciones en bases de datos relacionales. Incluyendo Postgres. MVCC no bloquea filas. Lo que hace en su lugar es mantener múltiples versiones de cada fila (de ahí el nombre), 
 
-Considerado como una violación grave de la coherencia, ya que las transacciones no están debidamente aisladas unas de otras. Las sentencias que nunca se han consignado en la base de datos pueden afectar a la ejecución de otras transacciones, modificando su comportamiento.
-
-Las transacciones que permiten lecturas sucias no pueden hacer ninguna afirmación razonable sobre la coherencia de los datos resultantes.
-
-### Non-repeatable reads ( Lecturas no repetibles )
-
-Las lecturas no repetibles se producen cuando un commit fuera de la transacción altera los datos vistos dentro de la transacción. Puede reconocer este tipo de problema si, dentro de una transacción, los mismos datos se leen dos veces pero se recuperan valores diferentes en cada instancia.
-
-Al igual que con las lecturas sucias, las transacciones que permiten lecturas no repetibles no ofrecen un aislamiento total entre transacciones. La diferencia es que con las lecturas no repetibles, las sentencias que afectan a la transacción han sido confirmadas fuera de la transacción.
-
-### Phantom read ( Lectura fantasma )
-
-Una lectura fantasma es un tipo específico de lectura no repetible que se produce cuando las filas devueltas por una consulta son diferentes la segunda vez que se ejecuta dentro de una transacción.
-
-Por ejemplo, si una consulta dentro de una transacción devuelve cuatro filas la primera vez que se ejecuta, pero cinco filas la segunda vez, se trata de una lectura fantasma. Las lecturas fantasma son causadas por commits fuera de la transacción que alteran el número de filas que satisfacen la consulta.
-
-### Anomalías de serialización
-
-Las anomalías de serialización ocurren cuando los resultados de múltiples transacciones confirmadas concurrentemente dan lugar a resultados diferentes que si se hubieran confirmado una tras otra. Esto puede ocurrir cada vez que una transacción permite que ocurran dos commits que modifican cada uno la misma tabla o datos sin resolver conflictos.
-
-Las anomalías de serialización son un tipo especial de problema que los primeros tipos de transacciones no comprendían. Esto se debe a que las primeras transacciones se implementaban con bloqueo, donde una no podía continuar si otra transacción estaba leyendo o alterando la misma pieza de datos.
 ## Niveles de aislamiento de las transacciones
 
 Las transacciones no son una solución única. Diferentes escenarios requieren diferentes equilibrios entre rendimiento y protección.
@@ -57,24 +37,41 @@ PostgreSQL permite especificar el tipo de aislamiento de transacciones que neces
 
 Los niveles de aislamiento ofrecidos por la mayoría de los sistemas de bases de datos incluyen los siguientes:
 
-### **Read uncommitted** (Lectura no comprometida)
-
-Read uncommitted es el nivel de aislamiento que ofrece menos garantías sobre el mantenimiento de la consistencia y el aislamiento de los datos. Aunque las transacciones que utilizan `Read uncommitted` tienen ciertas características frecuentemente asociadas con las transacciones, como la capacidad de confirmar múltiples sentencias a la vez o de revertir sentencias si se produce un error, permiten numerosas situaciones en las que se puede romper la consistencia.
-
-Las transacciones configuradas con el nivel de aislamiento de `Read uncommitted` permiten:
-
-- lecturas sucias
-- lecturas no repetibles
-- lecturas fantasma
-- anomalías de serialización
-
-Este nivel de aislamiento en realidad no está implementado en PostgreSQL. Aunque PostgreSQL reconoce el nombre del nivel de aislamiento, internamente no está soportado y en su lugar se utilizará `read committe`.
-
+| Isolation Level  | Dirty Reads                  | Non-repeatable Reads | Phantom Reads                | Serialization Anomalies |
+| ---------------- | ---------------------------- | -------------------- | ---------------------------- | ----------------------- |
+| Read Uncommitted | Allowed, but not in Postgres | Possible             | Possible                     | Possible                |
+| Read Committed   | Not Possible                 | Possible             | Possible                     | Possible                |
+| Repeatable Reads | Not Possible                 | Not Possible         | Allowed, but not in Postgres | Possible                |
+| Serializable     | Not Possible                 | Not Possible         | Not Possible                 | Not Possible            |
 ### Read committed ( Lectura comprometida )
 
 `Read committed` es un nivel de aislamiento que protege específicamente contra lecturas sucias. Cuando las transacciones utilizan el nivel de consistencia de`Read committed`, los datos no comprometidos nunca pueden afectar al contexto interno de una transacción. Esto proporciona un nivel básico de consistencia asegurando que los datos no comprometidos nunca influyan en una transacción.
 
-Aunque`Read committed` ofrece mayor protección que`Read uncommitted`, no protege contra todos los tipos de inconsistencia. Estos problemas todavía pueden surgir:
+#### Anomalias que pueden surgir:
+
+##### Non-repeatable reads ( Lecturas no repetibles )
+
+Las lecturas no repetibles se producen cuando un commit fuera de la transacción altera los datos vistos dentro de la transacción. Puede reconocer este tipo de problema si, dentro de una transacción, los mismos datos se leen dos veces pero se recuperan valores diferentes en cada instancia.
+
+![[Captura de pantalla 2024-04-30 a las 11.48.52.png]]
+
+El principal problema con las lecturas no repetibles es un anti-patrón clásico conocido como "“write after read”".
+
+![[Captura de pantalla 2024-04-30 a las 11.54.45.png]]
+##### Phantom read ( Lectura fantasma )
+
+Una lectura fantasma es un tipo específico de lectura no repetible que se produce cuando las filas devueltas por una consulta son diferentes la segunda vez que se ejecuta dentro de una transacción, nuevas filas que no existían antes aparecen de repente en medio de una transacción.
+
+![[Captura de pantalla 2024-04-30 a las 12.02.14.png]]
+
+Ambas consultas en la sesión B mostrarán el mismo saldo para la cuenta 789. Porque la actualización que se hizo en la sesión A no será visible para la sesión B. 
+
+Sin embargo, la segunda consulta también incluirá la cuenta 12345 que fue creada por la sesión A. Esta es una nueva fila que apareció de repente en medio de una transacción. Esto significa que la sesión B producirá un informe inconsistente - tanto porque tiene dos consultas que devolvieron resultados diferentes, como porque la segunda consulta muestra los datos que la sesión A insertó, pero no los datos que actualizó.
+##### Anomalías de serialización
+
+Las anomalías de serialización ocurren cuando los resultados de múltiples transacciones confirmadas concurrentemente dan lugar a resultados diferentes que si se hubieran confirmado una tras otra. Esto puede ocurrir cada vez que una transacción permite que ocurran dos commits que modifican cada uno la misma tabla o datos sin resolver conflictos.
+
+Las anomalías de serialización son un tipo especial de problema que los primeros tipos de transacciones no comprendían. Esto se debe a que las primeras transacciones se implementaban con bloqueo, donde una no podía continuar si otra transacción estaba leyendo o alterando la misma pieza de datos.
 
 - lecturas no repetibles
 - lecturas fantasma
@@ -84,13 +81,11 @@ PostgreSQL utilizará el nivel de `Read committed` por defecto si no se especifi
 
 ### Repeatable read ( Lectura repetible )
 
-El nivel de aislamiento de `Repeatable read` se basa en la garantía proporcionada por la `Read committed`. Evita las lecturas sucias como antes, pero también evita las lecturas no repetibles.
+ Evita las lecturas sucias como antes, pero también evita las lecturas no repetibles.
 
 Esto significa que ningún cambio realizado fuera de la transacción afectará a los datos leídos dentro de la transacción. Una consulta ejecutada al inicio de una transacción nunca tendrá un resultado diferente al final de la transacción a menos que sea causada directamente por sentencias dentro de la transacción.
 
 Mientras que la definición estándar del nivel de aislamiento de `Repeatable read` sólo requiere que se prevengan las lecturas sucias y no repetibles, PostgreSQL también previene las lecturas fantasma en este nivel. Esto significa que los commits fuera de la transacción no pueden alterar el número de filas que satisfacen una consulta.
-
-Dado que el estado de los datos vistos dentro de la transacción puede desviarse de los datos actualizados en la base de datos, las transacciones pueden fallar en el commit si los dos conjuntos de datos no pueden reconciliarse. Debido a esto, un inconveniente de este nivel de aislamiento es que puede que tenga que reintentar transacciones si hay un fallo de serialización en la confirmación.
 
 El nivel de aislamiento de `Repeatable read` de PostgreSQL bloquea la mayoría de los tipos de problemas de consistencia, pero aún pueden ocurrir anomalías de serialización.
 
@@ -99,6 +94,7 @@ El nivel de aislamiento de `Repeatable read` de PostgreSQL bloquea la mayoría d
 El nivel de aislamiento `serializable` ofrece el nivel más alto de aislamiento y consistencia. Previene todos los escenarios que el nivel de `Repeatable read` hace mientras que también elimina la posibilidad de anomalías de serialización.
 
 El aislamiento serializable garantiza que las transacciones concurrentes son confirmadas como si fueran ejecutadas una tras otra. Si se produce un escenario en el que podría introducirse una anomalía de serialización, una de las transacciones tendrá un fallo de serialización en lugar de introducir inconsistencia en el conjunto de datos.
+
 ## Empezando una transacción
 
 Cuando se ejecuta una sentencia, PostgreSQL la envuelve implícitamente en una transacción.
@@ -314,3 +310,103 @@ COMMIT;
 ```
 
 Encadenar transacciones no ofrece grandes novedades funcionales, pero puede ser útil para comprometer datos en límites naturales sin dejar de centrarse en el mismo tipo de operaciones.
+
+
+## Locks
+
+### Concepto 
+
+Postgres implementa el **Control de Concurrencia Multiversión (MVCC) :
+
+Mecanismo utilizado por PostgreSQL para manejar la concurrencia en las transacciones,
+Permite que múltiples transacciones accedan y modifiquen datos simultáneamente sin interferir entre sí, garantizando que los datos estén disponibles y sean consistentes en entornos de alta concurrencia.
+
+Cada transacción en PostgreSQL utiliza su propia "instantánea" de la base de datos, lo que significa que las operaciones de lectura y escritura no se obstruyen entre sí.
+
+Aunque MVCC en PostgreSQL ayuda a mitigar muchos problemas relacionados con la concurrencia al permitir que múltiples transacciones trabajen de manera concurrente sin bloquearse unas a otras, aún hay casos en los que se necesita los Locks ( bloqueos ).
+
+Estos, son un Mecanismo utilizado para controlar el acceso concurrente a objetos de base de datos como tablas, filas.
+
+Se utilizan para prevenir conflictos entre transacciones, asegurando que cada transacción pueda acceder y modificar la base de datos sin interferir con otras transacciones.
+
+### Tipos de bloqueos
+
+1. **Bloqueos a nivel de tabla:** Se aplican a toda la tabla y pueden ser explícitos o implícitos. Los bloqueos implícitos se liberan automáticamente al finalizar una transacción, mientras que los explícitos deben liberarse manualmente.
+    
+2. **Bloqueos a nivel de fila:** Se aplican a filas individuales dentro de una tabla. Al igual que los bloqueos a nivel de tabla, pueden ser explícitos o implícitos.
+    
+3. **Bloqueos a nivel de página:** Estos bloqueos se aplican a páginas específicas dentro de una tabla.
+    
+4. **Bloqueos consultivos:** Son bloqueos explícitos que pueden ser utilizados para coordinar entre diferentes sesiones o procesos.
+    
+5. **Deadlocks:** Ocurren cuando dos o más transacciones están esperando por recursos que posee el otro, lo que resulta en un estancamiento.
+#### Tipos de bloqueo
+
+**Access Exclusive (AEX) locks** (Bloqueos de Acceso Exclusivo): 
+Utilizados para evitar que cualquier otra transacción acceda o modifique el objeto bloqueado. 
+Utilizados cuando una transacción está realizando una operación destructiva, como eliminar una tabla o truncar una tabla.
+
+**Exclusive (EX) locks** (Bloqueos exclusivos): 
+Utilizados para evitar que otras transacciones modifiquen el objeto bloqueado, pero permiten que otras transacciones lean el objeto. 
+Utilizados cuando una transacción realiza una operación de actualización que modifica la estructura del objeto, como añadir o eliminar columnas de una tabla.
+
+**Share (SH) locks:** (Bloqueos compartidos): 
+Utilizados para permitir que varias transacciones lean el mismo objeto simultáneamente, pero impiden que modifiquen el objeto. 
+Utilizados cuando una transacción realiza una operación de sólo lectura, como una consulta SELECT.
+
+Row Share (RS) y Row Exclusive (RX): 
+Utilizados para controlar el acceso concurrente a filas individuales de una tabla. 
+Permiten a varias transacciones leer la misma fila simultáneamente, pero les impiden modificarla. Los bloqueos exclusivos de fila permiten que una transacción modifique una fila, pero impiden que otras transacciones lean o modifiquen la fila.
+
+Los bloqueos son adquiridos automáticamente por el sistema de base de datos cada vez que una transacción accede o modifica un objeto de la base de datos. El sistema de base de datos utiliza un gestor de bloqueos para realizar un seguimiento de qué bloqueos están en manos de qué transacciones, y utiliza un mecanismo de escalado de bloqueos para evitar tener demasiados bloqueos en memoria
+
+Cuando una transacción intenta acceder a un objeto que ya está bloqueado por otra transacción, esperará a que se libere el bloqueo (si el modo de bloqueo es compatible), o será abortada con un error (si el modo de bloqueo es incompatible). Esto garantiza que las transacciones se ejecuten de forma coherente y serializable.
+
+En PostgreSQL, un bloqueo ocurre cuando dos o más transacciones están esperando que la otra libere un bloqueo, causando que queden atrapadas en un estado de espera indefinido. Los bloqueos pueden ser causados por una variedad de factores, incluyendo el uso de modos de bloqueo conflictivos, el orden en que los bloqueos son adquiridos, y la presencia de dependencias circulares entre transacciones.
+
+Este es un ejemplo de un bloqueo que puede ocurrir en PostgreSQL cuando dos transacciones intentan actualizar la misma tabla concurrentemente:
+
+
+```sql
+Transacción 1:
+BEGIN;
+UPDATE cuentas SET saldo
+= saldo + 100 WHERE account_id = 1;
+
+Transacción 2:
+BEGIN;
+UPDATE cuentas SET saldo
+= saldo - 100 WHERE account_id = 2;
+```
+
+Transacción 1 adquiere un bloqueo exclusivo (EX) sobre la tabla accounts, y la Transacción 2 adquiere un bloqueo exclusivo (EX) sobre la misma tabla. Dado que ambas transacciones están intentando modificar la misma tabla de forma concurrente, están esperando a que la otra libere sus bloqueos, provocando un bloqueo.
+
+Para evitar este tipo de bloqueo, es importante asegurarse de que las transacciones adquieren bloqueos sobre objetos de la base de datos en el mismo orden, y utilizar modos de bloqueo compatibles entre sí. Por ejemplo, en el ejemplo anterior, si ambas transacciones utilizan un bloqueo compartido (SH) en lugar de un bloqueo exclusivo (EX), podrían acceder a la tabla de forma concurrente sin tener que esperar la una a la otra.
+
+```sql
+test=# SELECT
+    l.locktype,
+    l.relation::regclass AS table_name,
+    l.mode,
+    l.pid,
+    l.granted,
+    a.usename AS username
+FROM
+    pg_locks l
+JOIN
+    pg_stat_activity a ON l.pid = a.pid
+WHERE
+    l.relation::regclass = 'cuenta'::regclass;
+```
+
+
+#### Conflictos con los Tipos de bloqueos:
+
+![PostgreSQL Locks: Table-level lock modes' conflicts](https://res.cloudinary.com/hevo/image/upload/c_scale,w_648,h_372/f_webp,q_auto/v1710414088/hevo-learn-1/mode-of-locks-in-table-level.png?_i=AA)
+
+En una misma tabla, dos transacciones no pueden mantener a la vez bloqueos con modos conflictivos. Por ejemplo, un bloqueo de acceso compartido continuo impide que una sesión adquiera la exclusividad de acceso.
+Numerosas transacciones pueden mantener simultáneamente modos de bloqueo no conflictivos. Por ejemplo, el bloqueo de fila compartida y el bloqueo de fila exclusiva del diagrama anterior no entran en conflicto, lo que permite que muchas transacciones o sesiones mantengan ambos simultáneamente.
+Algunos modos de bloqueo se contradicen entre sí. Por ejemplo, sólo una transacción puede tener un bloqueo ACCESS EXCLUSIVE a la vez.
+Mientras que algunos modos de bloqueo no interfieren entre sí. Por ejemplo, diferentes transacciones pueden tener cada una un bloqueo ACCESO COMPARTIDO.
+
+
