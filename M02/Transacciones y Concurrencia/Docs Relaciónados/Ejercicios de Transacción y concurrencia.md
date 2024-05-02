@@ -28,7 +28,7 @@ Dado el siguiente escenario de transacciones concurrentes en una base de datos b
 
 **Enunciado:** Escribe una transacción que transfiera $500 de la cuenta con `id = 2` a la cuenta con `id = 1`. Sin embargo, si la segunda actualización (incremento del saldo en la cuenta 1) falla por alguna razón, debes revertir completamente la transacción.
 
-### Ejercicio 5: Uso de puntos de guardado ( `SAVEPOINTS`)
+## Ejercicio 5: Uso de puntos de guardado ( `SAVEPOINTS`)
 
 - Escribe una transacción en un script que añada $1500 a la cuenta con `id = 1`
 - Crea un `SAVEPOINT A`
@@ -38,7 +38,7 @@ Dado el siguiente escenario de transacciones concurrentes en una base de datos b
 - Una vez veas el total donde te llevo el `SAVEPOINT` deshaz la transacción con un `ROLLBACK` (  en una consulta nueva) 
 - En el script comenta ese `ROLLBACK TO B`, y repite los pasos para ver el `SAVEPOINT A` y `C` para finalizar añade al final de la transacción un `ROLLBACK` y muestra la cuenta.
 
-### Ejercicio 6: Cambiar el grado de aislamiento
+## Ejercicio 6: Cambiar el grado de aislamiento
 
 Para realizar este ejercicio necesitaras crear otro usuario en la base de datos con Rol de SUPERUSER 
 
@@ -60,7 +60,7 @@ Queremos simular un error de lectura `Non-repeatable Reads`.
 - Observa si los resultados de la segunda lectura son diferentes de la primera debido a la modificación realizada por la otra sesión.
 
 Utiliza el nivel de aislamiento adecuado para evitar el error de lectura no repetible que se produjo.
-### Ejercicio 7: Leer el tipo de Lock dependiendo de la transacción.
+## Ejercicio 7: Leer el tipo de Lock dependiendo de la transacción.
 
 Parte 1
 Usuario 1 crea una transaccion de Update para su balance, sin cerrar la transaccion, observa que tipo de bloqueo se genera en esa tabla, mientras con el usuario 2 haz una consulta sobre esa tabla, puedes? porque? que tipo de bloqueo genera esa transaccion de consulta?
