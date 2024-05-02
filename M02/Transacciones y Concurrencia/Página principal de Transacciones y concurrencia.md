@@ -384,7 +384,7 @@ Transacción 1 adquiere un bloqueo exclusivo (EX) sobre la tabla accounts, y la 
 Para evitar este tipo de bloqueo, es importante asegurarse de que las transacciones adquieren bloqueos sobre objetos de la base de datos en el mismo orden, y utilizar modos de bloqueo compatibles entre sí. Por ejemplo, en el ejemplo anterior, si ambas transacciones utilizan un bloqueo compartido (SH) en lugar de un bloqueo exclusivo (EX), podrían acceder a la tabla de forma concurrente sin tener que esperar la una a la otra.
 
 ```sql
-test=# SELECT
+SELECT
     l.locktype,
     l.relation::regclass AS table_name,
     l.mode,

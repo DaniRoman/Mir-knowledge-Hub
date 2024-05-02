@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
+                "file": "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
+                "file": "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
+                "file": "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md"
+                "file": "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md"
               }
             }
           }
@@ -148,8 +148,8 @@
   },
   "active": "1ebb1e1dbf0f0782",
   "lastOpenFiles": [
-    "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md",
     "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
+    "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md",
     "M02/Página principal temario Bases de Datos M02.md",
     "M02/Guia Montar DB con Docker y cargar dvdRental Sample DB.md",
     "M02/README.md",
