@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "cdecc876e58a2819",
+        "id": "cca58d99338d527a",
         "type": "tabs",
         "children": [
           {
-            "id": "1ebb1e1dbf0f0782",
+            "id": "c9a05ccd951cffed",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "M02/README.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M02/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M02/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "M02/README.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,10 +138,10 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "1ebb1e1dbf0f0782",
+  "active": "c9a05ccd951cffed",
   "lastOpenFiles": [
-    "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
     "M02/README.md",
+    "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
     "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md",
     "M02/Página principal temario Bases de Datos M02.md",
     "M02/Guia Montar DB con Docker y cargar dvdRental Sample DB.md",
