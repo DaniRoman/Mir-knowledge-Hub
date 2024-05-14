@@ -149,7 +149,7 @@ Inicia sesión como superuser y Crear cinco usuario de la manera que quieras con
 - 2`client` 
 
 ```plsql
--- Inserte aqui su codigo joven
+---- Inserte aqui su codigo joven
 
 ```
 
@@ -165,27 +165,18 @@ Crea los roles siguientes
 - `client_role` 
 
 ```plsql
--- Crear el rol "gerente_proyecto"
-CREATE ROLE project_manager_role;
--- Crear el rol "desarrollador"
-CREATE ROLE developer_role;
--- Crear el rol "cliente"
-CREATE ROLE client_rol;		
+---- Inserte aqui su codigo joven
+
 ```
 
 #### Asignación de Roles a los usuarios:( 0,5p )
 
 Asigna los Roles que creaste anteriormente a los usuarios correspondientes
 
- ```plsql
- -- Asignar el rol administrador_sistema al usuario "admin"
--- Asignar el rol gerente_proyecto al usuario "gerente"
-GRANT project_manager_role TO project_manager;
--- Asignar el rol desarrollador al usuario "desarrollador"
-GRANT developer_rol TO developer1, developer2;
--- Asignar el rol cliente al usuario "cliente"
-GRANT client_rol TO client, client2;
- ```
+```plsql
+---- Inserte aqui su codigo joven
+
+```
 
 #### Creación de una vista para el Developer y el Cliente ( 1p )
 
@@ -195,43 +186,8 @@ Crea una vista donde el Cliente pueda ver los proyectos en los que esta involucr
 >[!important] Importante!
 >En la ultima clausula utiliza`WHERE name = current_user` para que la vista solo muestre los datos para el developer que esta actualmente conectado .
 
-```sql
----Vista para el desarrollador
-CREATE VIEW developer_project_task_info AS
-SELECT 
-    d.name AS developer_name,
-    p.name AS project_name,
-    p.creation_date AS project_creation_date,
-    p.limit_date AS project_limit_date,
-    t.name AS task_name,
-    t.state AS current_state,
-    t.fecha_creacion AS task_creation_date,
-    t.fecha_limite AS task_limit_date
-FROM 
-    developer d
-JOIN 
-    project p ON d.id = p.developer_id
-JOIN 
-    task t ON d.id = t.developer_id
-WHERE 
-    d.name = current_user;
-
---- Vista para el cliente
-CREATE VIEW client_projects_view AS
-SELECT
-    c.name AS client_name,
-    p.id AS project_id,
-    p.name AS project_name,
-    p.creation_date AS project_creation_date,
-    p.limit_date AS project_limit_date
-FROM
-    client c
-JOIN
-    client_project cp ON c.id = cp.client_id
-JOIN
-    project p ON cp.project_id = p.id
-WHERE
-    c.name = current_user;
+```plsql
+---- Inserte aqui su codigo joven
 
 ```
 
@@ -256,14 +212,9 @@ Project Manager_role
 
 - `project` Solo puede ver los proyectos a los que esta asignado.
 
-```sql
-GRANT ALL PRIVILEGES ON project TO project_manager_role;
-GRANT SELECT ON project_manager, task, client, developer TO project_manager_role
+```plsql
+---- Inserte aqui su codigo joven
 
-GRANT SELECT ON developer_project_task_info TO developer_role;
-GRANT SELECT, INSERT, UPDATE ON task TO developer_role;
-
-GRANT SELECT ON client_projects_view TO client_role;
 ```
 
 >[!important] Nota!
