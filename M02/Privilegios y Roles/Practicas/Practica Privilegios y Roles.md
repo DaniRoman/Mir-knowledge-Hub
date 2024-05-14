@@ -217,7 +217,7 @@ Project Manager_role
 
 ```
 
-INSERTA AQUI LAS FOTOS QUE PIDE EL ENUNCIADO PARA LAS COMPRI
+*INSERTA AQUI LAS FOTOS QUE PIDE EL ENUNCIADO PARA LAS COMPROBACIÓNES CORRESPONDIENTES.*
 
 >[!important] Nota!
 >Si quieres puedes comprobar permisos de esta manera.
@@ -258,7 +258,7 @@ Project Manager_role
 
 - `project` Ver todos los projectos de la empresa.
 
-INSERTA AQUI LAS FOTOS QUE PIDE EL ENUNCIADO
+*INSERTA AQUI LAS FOTOS QUE PIDE EL ENUNCIADO PARA LAS COMPROBACIÓNES CORRESPONDIENTES.*
 
 #### Revocación alteración de Permisos y Eliminación de Roles:** ( 1.5p )
 
