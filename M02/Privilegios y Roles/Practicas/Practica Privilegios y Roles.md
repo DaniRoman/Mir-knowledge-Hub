@@ -149,14 +149,8 @@ Inicia sesión como superuser y Crear cinco usuario de la manera que quieras con
 - 2`client` 
 
 ```plsql
--- Crear el usuario "gerente" con contraseña
-CREATE ROLE project_manager WITH LOGIN PASSWORD 'project_manager';
--- Crear el usuario "desarrollador" con contraseña
-CREATE ROLE developer1 WITH LOGIN PASSWORD 'developer1';
-CREATE ROLE developer2 WITH LOGIN,PASSWORD 'developer2';
--- Crear el usuario "cliente" con contraseña
-CREATE ROLE client WITH LOGIN,PASSWORD 'client1';
-CREATE ROLE client2 WITH LOGIN, PASSWORD 'client2'
+-- Inserte aqui su codigo joven
+
 ```
 
 >[!tip] comandos
