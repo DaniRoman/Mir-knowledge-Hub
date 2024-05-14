@@ -276,11 +276,7 @@ Project Manager_role
 *Developer_role
 - `Task` - Ya no puede ni añadir ni actualizar.
 
-```sql
-REVOKE DELETE ON client FROM project_manager;
-GRANT INSERT ON task TO project_manager;
+```plsql
+---- Inserte aqui su codigo joven
 
-REVOKE INSERT UPDATE ON task FROM task;
-
-DROP ROLE client;
 ```
