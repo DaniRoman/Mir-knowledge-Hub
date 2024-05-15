@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "M02/Privilegios y Roles/Páginas relacionadas/Gestión de privilegios en PostgreSQL.md",
+                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M02/Privilegios y Roles/Páginas relacionadas/Gestión de privilegios en PostgreSQL.md",
+                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M02/Privilegios y Roles/Páginas relacionadas/Gestión de privilegios en PostgreSQL.md",
+                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "M02/Privilegios y Roles/Páginas relacionadas/Gestión de privilegios en PostgreSQL.md"
+                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md"
               }
             }
           }
@@ -150,6 +150,7 @@
   "active": "c9a05ccd951cffed",
   "lastOpenFiles": [
     "M02/Privilegios y Roles/Página principal de Privilegios y Roles.md",
+    "M02/Privilegios y Roles/Páginas relacionadas/Gestión de privilegios en PostgreSQL.md",
     "M02/Privilegios y Roles/Páginas relacionadas/Control de acceso en PostgresSQL.md",
     "M02/Privilegios y Roles/Páginas relacionadas/Autenticación en PostgreSQL.md",
     "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
@@ -193,7 +194,6 @@
     "M02/DML/DML-2/Páginas enlazadas/Página agrupación de las filas.md",
     "M02/DML/DML-2/Páginas enlazadas/Página agregación.md",
     "M02/DML/DML-2/Páginas enlazadas/Página WHERE.md",
-    "M02/DML/DML-2/Páginas enlazadas/Página SELECT.md",
     "M02/DML/DML-2/Páginas enlazadas"
   ]
 }

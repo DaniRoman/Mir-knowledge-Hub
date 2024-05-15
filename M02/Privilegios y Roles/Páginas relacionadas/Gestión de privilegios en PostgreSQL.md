@@ -44,7 +44,7 @@ GRANT INSERT ON juegos TO PUBLIC;
 ---- Otorgar todos los privilegios sobre la tabla `tareas` a `antonio` con opción de administración:
 GRANT ALL PRIVILEGES ON tareas TO antonio WITH GRANT OPTION;
 ---- Añadir al usuario `joan` al grupo de administradores:
-GRANT administradores TO joan;
+GRANT admin_role TO joan;
 
 ```
 
