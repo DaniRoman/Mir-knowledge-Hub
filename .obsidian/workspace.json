@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
+                "file": "M02/Privilegios y Roles/Páginas relacionadas/Autenticación en PostgreSQL.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
+                "file": "M02/Privilegios y Roles/Páginas relacionadas/Autenticación en PostgreSQL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
+                "file": "M02/Privilegios y Roles/Páginas relacionadas/Autenticación en PostgreSQL.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md"
+                "file": "M02/Privilegios y Roles/Páginas relacionadas/Autenticación en PostgreSQL.md"
               }
             }
           }
@@ -146,8 +146,10 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "796576777d3f9f4e",
+  "active": "c9a05ccd951cffed",
   "lastOpenFiles": [
+    "M02/Privilegios y Roles/Página principal de Privilegios y Roles.md",
+    "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
     "M02/README.md",
     "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
     "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md",
@@ -191,8 +193,6 @@
     "M02/DML/DML-2/Páginas enlazadas/Página SELECT.md",
     "M02/DML/DML-2/Páginas enlazadas/Página Ordenación de los datos presentados.md",
     "M02/DML/DML-2/Páginas enlazadas/Página Operadores.md",
-    "M02/DML/DML-2/Páginas enlazadas/Página Condicionas en la agrupación de las filas de una tabla HAVING.md",
-    "M02/DML/DML-2/Páginas enlazadas/PostgreSQL Subconsulta correlacionada.md",
     "M02/DML/DML-2/Páginas enlazadas"
   ]
 }
