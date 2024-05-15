@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 209.5
+    "width": 209.5,
+    "collapsed": true
   },
   "right": {
     "id": "f11d730b73137ccf",
@@ -146,7 +147,7 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "c9a05ccd951cffed",
+  "active": "796576777d3f9f4e",
   "lastOpenFiles": [
     "M02/README.md",
     "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
