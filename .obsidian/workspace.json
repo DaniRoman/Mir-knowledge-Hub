@@ -150,6 +150,7 @@
   "lastOpenFiles": [
     "M02/Privilegios y Roles/Página principal de Privilegios y Roles.md",
     "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
+    "M02/Privilegios y Roles/Páginas relacionadas/Autenticación en PostgreSQL.md",
     "M02/README.md",
     "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
     "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md",
@@ -192,7 +193,6 @@
     "M02/DML/DML-2/Páginas enlazadas/Página WHERE.md",
     "M02/DML/DML-2/Páginas enlazadas/Página SELECT.md",
     "M02/DML/DML-2/Páginas enlazadas/Página Ordenación de los datos presentados.md",
-    "M02/DML/DML-2/Páginas enlazadas/Página Operadores.md",
     "M02/DML/DML-2/Páginas enlazadas"
   ]
 }
