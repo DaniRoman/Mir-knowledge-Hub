@@ -217,7 +217,7 @@ Project Manager_role
 
 ```
 
-*INSERTA AQUI LAS FOTOS QUE PIDE EL ENUNCIADO PARA LAS COMPROBACIÓNES CORRESPONDIENTES.*
+*INSERTA AQUI LAS FOTOS QUE PIDE EL ENUNCIADO PARA LAS COMPROBACIÓNES CORRESPONDIENTES.*hasbula_role
 
 >[!important] Nota!
 >Si quieres puedes comprobar permisos de esta manera.
