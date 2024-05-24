@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 209.5,
-    "collapsed": true
+    "width": 209.5
   },
   "right": {
     "id": "f11d730b73137ccf",
@@ -149,9 +148,9 @@
   },
   "active": "c9a05ccd951cffed",
   "lastOpenFiles": [
-    "M02/Práctica PL-pgSQL.md",
     "M02/PL-pgSQL/Práctica PL-pgSQL.md",
     "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md",
+    "M02/Práctica PL-pgSQL.md",
     "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
     "M02/Privilegios y Roles/Página principal de Privilegios y Roles.md",
     "M02/Privilegios y Roles/Páginas relacionadas/Gestión de privilegios en PostgreSQL.md",
