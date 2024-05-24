@@ -512,9 +512,6 @@ begin
 end $$;
 ```
 
-
-
-
 #### Loop 
 
 Bucle incondicional que ejecuta un bloque de código repetidamente hasta que finaliza mediante una sentencia exit o return.
