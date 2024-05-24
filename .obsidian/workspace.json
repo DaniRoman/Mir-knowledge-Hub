@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
+                "file": "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 209.5
+    "width": 209.5,
+    "collapsed": true
   },
   "right": {
     "id": "f11d730b73137ccf",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
+                "file": "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
+                "file": "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md"
+                "file": "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md"
               }
             }
           }
@@ -148,11 +149,14 @@
   },
   "active": "c9a05ccd951cffed",
   "lastOpenFiles": [
+    "M02/Práctica PL-pgSQL.md",
+    "M02/PL-pgSQL/Práctica PL-pgSQL.md",
+    "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md",
+    "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
     "M02/Privilegios y Roles/Página principal de Privilegios y Roles.md",
     "M02/Privilegios y Roles/Páginas relacionadas/Gestión de privilegios en PostgreSQL.md",
     "M02/Privilegios y Roles/Páginas relacionadas/Control de acceso en PostgresSQL.md",
     "M02/Privilegios y Roles/Páginas relacionadas/Autenticación en PostgreSQL.md",
-    "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
     "M02/README.md",
     "M02/Transacciones y Concurrencia/Página principal de Transacciones y concurrencia.md",
     "M02/Transacciones y Concurrencia/Docs Relaciónados/Ejercicios de Transacción y concurrencia.md",
@@ -190,9 +194,6 @@
     "M2S/Monitoreo",
     "M2S",
     "M02/DML/DML-2/Páginas enlazadas/Página principal Join.md",
-    "M02/DML/DML-2/Páginas enlazadas/Página agrupación de las filas.md",
-    "M02/DML/DML-2/Páginas enlazadas/Página agregación.md",
-    "M02/DML/DML-2/Páginas enlazadas/Página WHERE.md",
     "M02/DML/DML-2/Páginas enlazadas"
   ]
 }
