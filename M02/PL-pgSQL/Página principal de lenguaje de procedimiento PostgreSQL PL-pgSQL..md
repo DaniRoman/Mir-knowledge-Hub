@@ -599,7 +599,6 @@ returns int
 language plpgsql
 
 as
-
 $$
 declare
    film_count integer;
