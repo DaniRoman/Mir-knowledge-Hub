@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "cca58d99338d527a",
+        "id": "9341630023b140df",
         "type": "tabs",
         "children": [
           {
-            "id": "c9a05ccd951cffed",
+            "id": "82a76fb657a39827",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,10 +138,10 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "c9a05ccd951cffed",
+  "active": "82a76fb657a39827",
   "lastOpenFiles": [
-    "M02/PL-pgSQL/Práctica PL-pgSQL.md",
     "M02/PL-pgSQL/Página principal de lenguaje de procedimiento PostgreSQL PL-pgSQL..md",
+    "M02/PL-pgSQL/Práctica PL-pgSQL.md",
     "M02/Práctica PL-pgSQL.md",
     "M02/Privilegios y Roles/Practicas/Practica Privilegios y Roles.md",
     "M02/Privilegios y Roles/Página principal de Privilegios y Roles.md",
